@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'HoboStd';
+    src: url('../fonts/HoboStd/HoboStd.eot');
+    src: url('../fonts/HoboStd/HoboStd.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HoboStd/HoboStd.woff') format('woff'),
+    url('../fonts/HoboStd/HoboStd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
