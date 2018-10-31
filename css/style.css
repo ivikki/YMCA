@@ -78,7 +78,15 @@ header{
     padding: 2px;
     border: 1px solid #98cde3;
     background: transparent;
-    margin: 0 3px 0 8px;
+    margin-left: 8px;
+    color: #fff;
+}
+
+.search-header input[type=submit]{
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
 }
 
 main{
@@ -101,51 +109,53 @@ aside{
     width: 264px;
     border: 2px solid #fff;
     margin-bottom: 4px;
-    padding-left: 20px;
     box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
     position: relative;
+    cursor: pointer;
 }
 
-.menu .orange, .news h3, .orange .drop-down-menu{
+.orange-bg{
     background: #f09404;
 }
 
-.menu .yellow, .contact h3, .yellow .drop-down-menu{
+.yellow-bg{
     background: #f7cc04;
 }
 
-.menu .blue, .content h3, .blue .drop-down-menu, .nurseries-block h3{
+.blue-bg{
     background: #2a98c6;
 }
 
-.menu .black, .black .drop-down-menu{
+.black-bg{
     background: #61513e;
 }
 
-.menu .green, .green .drop-down-menu{
+.green-bg{
     background: #89b726;
 }
 
-.menu .pink, .pink .drop-down-menu{
+.pink-bg{
     background: #e352f0;
 }
 
 .drop-down-menu{
-    display: none;
+    opacity: 0;
     width: 198px;
     left: 250px;
-    top: -2px;
+    top: -9999px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     border: 2px solid #fff;
     box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
     color: #fff;
     font-size: 18px;
     padding: 6px 0;
+    transition: opacity 0.5s;
 }
 
 .menu li:hover .drop-down-menu{
-    display: block;
+    opacity: 1;
+    top: -2px;
 }
 
 .menu li:hover span{
@@ -153,27 +163,27 @@ aside{
     display: block;
 }
 
-.menu li.orange:hover span {
+.menu li.orange-bg:hover span {
     background: #f09404 url("../img/arrow_blue.png") no-repeat 0 5px;
 }
 
-.menu li.blue:hover span {
+.menu li.blue-bg:hover span {
     background: #2a98c6 url("../img/arrow_yellow.png") no-repeat 0 5px;
 }
 
-.menu li.yellow:hover span {
+.menu li.yellow-bg:hover span {
     background: #f7cc04 url("../img/arrow_black.png") no-repeat 0 5px;
 }
 
-.menu li.pink:hover span {
+.menu li.pink-bg:hover span {
     background: #e352f0 url("../img/arrow_green.png") no-repeat 0 5px;
 }
 
-.menu li.green:hover span {
+.menu li.green-bg:hover span {
     background: #89b726 url("../img/arrow_orange.png") no-repeat 0 5px;
 }
 
-.menu li.black:hover span {
+.menu li.black-bg:hover span {
     background: #61513e url("../img/arrow_blue.png") no-repeat 0 5px;
 }
 
@@ -202,8 +212,8 @@ aside{
 
 .menu span{
     position: relative;
-    z-index: 2;
-    padding: 5px 0;
+    z-index: 3;
+    padding: 5px 0 5px 20px;
 }
 
 .section-aside{
@@ -283,14 +293,20 @@ aside p{
     margin-top: -8px;
 }
 
-.content p{
-    text-align: justify;
+.content:before{
+    content: '';
+    display: block;
+    background: url("../img/fairthorne_group.png") no-repeat;
+    top: -20px;
+    left: -17px;
+    position: absolute;
+    z-index: 1;
+    width: 543px;
+    height: 92px;
 }
 
-.fairthorne-group{
-    position: absolute;
-    left: -17px;
-    top: -20px;
+.content p{
+    text-align: justify;
 }
 
 .content img.content-poster{
@@ -336,10 +352,31 @@ aside p{
     position: relative;
 }
 
-.title{
+.post:before, .photo-gallery:before{
+    content: '';
+    display: block;
     position: absolute;
     left: -10px;
     top: -18px;
+    z-index: 1;
+}
+
+.post-1:before{
+    background: url("../img/daycamps.png") no-repeat;
+    width: 155px;
+    height: 39px;
+}
+
+.post-2:before{
+    background: url("../img/schools.png") no-repeat;
+    width: 123px;
+    height: 42px;
+}
+
+.post-3:before, .photo-1:before{
+    background: url("../img/nurservies.png") no-repeat;
+    width: 152px;
+    height: 44px;
 }
 
 .post p{
@@ -356,7 +393,7 @@ aside p{
 }
 
 .photo-border-orange{
-    border: 5px solid #e99004;
+    border:5px solid #e99004;
 }
 
 .photo-border-green{
@@ -364,25 +401,50 @@ aside p{
 }
 
 .box-post a, .box-gallery a{
+    display: inline-block;
+    padding-right: 35px;
     font-size: 25px;
     font-family: HoboStd;
+    position: relative;
     color: #89b726;
     text-shadow: rgb(255, 255, 255) 3px 0px 0px, rgb(255, 255, 255) 2.83487px 0.981584px 0px, rgb(255, 255, 255) 2.35766px 1.85511px 0px, rgb(255, 255, 255) 1.62091px 2.52441px 0px, rgb(255, 255, 255) 0.705713px 2.91581px 0px, rgb(255, 255, 255) -0.287171px 2.98622px 0px, rgb(255, 255, 255) -1.24844px 2.72789px 0px, rgb(255, 255, 255) -2.07227px 2.16926px 0px, rgb(255, 255, 255) -2.66798px 1.37182px 0px, rgb(255, 255, 255) -2.96998px 0.42336px 0px, rgb(255, 255, 255) -2.94502px -0.571704px 0px, rgb(255, 255, 255) -2.59586px -1.50383px 0px, rgb(255, 255, 255) -1.96093px -2.27041px 0px, rgb(255, 255, 255) -1.11013px -2.78704px 0px, rgb(255, 255, 255) -0.137119px -2.99686px 0px, rgb(255, 255, 255) 0.850987px -2.87677px 0px, rgb(255, 255, 255) 1.74541px -2.43999px 0px, rgb(255, 255, 255) 2.44769px -1.73459px 0px, rgb(255, 255, 255) 2.88051px -0.838247px 0px, #000 2px 2px 4px;
 }
 
-.box-post a img, .box-gallery a img{
-    margin: 0 0 -4px 6px;
+.post a:after, .box-gallery a:after{
+    content: '';
+    display: block;
+    top: 2px;
+    right: 0;
+    position: absolute;
+}
+
+.post-1 a:after{
+    background: url("../img/arrow_orange.png") no-repeat;
+    width: 30px;
+    height: 25px;
+}
+
+.post-2 a:after, .box-gallery a:after{
+    background: url("../img/arrow_green.png") no-repeat;
+    width: 28px;
+    height: 26px;
+}
+
+.post-3 a:after{
+    background: url("../img/arrow_blue.png") no-repeat;
+    width: 28px;
+    height: 25px;
 }
 
 .box-post a:hover, .box-gallery a:hover{
     text-decoration: none;
 }
 
-.box-post .go-1 a{
+.box-post .post-1 a{
     color: #e99004;
 }
 
-.box-post .go-3 a{
+.box-post .post-3 a{
     color: #2a98c6;
 }
 
@@ -428,7 +490,7 @@ aside p{
     margin-right: 15px;
 }
 
-.gallery a img{
+.gallery a{
     margin-top: 10px;
 }
 
@@ -440,7 +502,7 @@ aside p{
     margin-top: 20px;
 }
 
-.calendar  .first-string td{
+.calendar  th{
     padding-bottom: 13px;
 }
 
@@ -502,6 +564,36 @@ footer p.copyright{
     width: 32%;
     margin-bottom: 43px;
     position: relative;
+}
+
+.photo-2:before{
+    background: url("../img/children.png") no-repeat;
+    width: 125px;
+    height: 36px;
+}
+
+.photo-3:before{
+    background: url("../img/adults.png") no-repeat;
+    width: 99px;
+    height: 39px;
+}
+
+.photo-4:before{
+    background: url("../img/schools_pink.png") no-repeat;
+    width: 115px;
+    height: 42px;
+}
+
+.photo-5:before{
+    background: url("../img/family.png") no-repeat;
+    width: 101px;
+    height: 40px;
+}
+
+.photo-6:before{
+    background: url("../img/volunteering.png") no-repeat;
+    width: 193px;
+    height: 43px;
 }
 
 .photo-border-pink{
@@ -575,10 +667,6 @@ footer p.copyright{
     text-decoration: underline;
 }
 
-.block-text h3{
-    background: #f09404;
-}
-
 .block-gallery{
     width: 290px;
     position: relative;
@@ -589,17 +677,25 @@ footer p.copyright{
     margin: 55px 0 10px 0;
 }
 
-.step-top, .step-bottom{
+.step-top:before, .step-bottom:before{
+    content: '';
+    display: block;
     position: absolute;
     z-index: 3;
 }
 
-.step-top{
+.step-top:before{
+    background: url("../img/step_bg.png") no-repeat;
     right: -47px;
     top: 309px;
+    width: 96px;
+    height: 159px;
 }
 
-.step-bottom{
+.step-bottom:before{
+    background: url("../img/step_bottom.png") no-repeat;
+    width: 102px;
+    height: 138px;
     top: -106px;
     left: -41px;
 }
